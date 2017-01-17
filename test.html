@@ -1,0 +1,315 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>test</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width" />
+        <style type="text/css">
+            body, div, ul, li {
+                margin: 0;
+                padding: 0;
+            }
+            #scrl>ul {
+                list-style-type: none;
+            }
+            #scrl>ul>li {
+                height: 40px;
+            }
+            #scrl>ul>li:first-child {
+                border: 1px solid #000;
+            }
+            #scrl>ul>li:not(:first-child) {
+                border: 1px solid #000;
+                border-top: none;
+            }
+            #view {
+                margin-top: 60px;
+                overflow: hidden;
+                position:relative;
+                width: 100%;
+                height: 300px;
+            }
+            #xwrap {
+                width: 100%;
+            }
+            .clearfix:after {
+                display: block;
+                content: "";
+                clear: both;
+            }
+            .xul {
+                list-style-type: none;
+            }
+            .content:first-child {
+                float: left;
+                width: 50%;
+                height: 350px;
+            }
+            .content:nth-child(2) {
+                float: left;
+                width: 50%;
+                height: 350px;
+                background: #eee;
+            }
+            li {
+                width: 100%;
+                height: 60px;
+            }
+            #ywrap1 {
+                width: 100%;
+                height: 300px;
+                overflow: hidden;
+                position:relative;
+            }
+            #ywrap2 {
+                width: 100%;
+                height: 300px;
+                overflow: hidden;
+                position:relative;
+            }
+            #pullDown, #pullUp {
+	            background:#fff;
+	            height:40px;
+	            line-height:40px;
+	            padding:5px 10px;
+	            font-weight:bold;
+	            font-size:14px;
+	            color:#888;
+            }
+            #pullDown .pullDownIcon, #pullUp .pullUpIcon  {
+	            display:block; float:left;
+	            width:40px; height:40px;
+	            background:url(/static/images/pull-icon.png) 0 0 no-repeat;
+	            -webkit-background-size:40px 80px; background-size:40px 80px;
+	            -webkit-transition-property:-webkit-transform;
+	            -webkit-transition-duration:250ms;	
+            }
+            #pullDown .pullDownIcon {
+	            -webkit-transform:rotate(0deg) translateZ(0);
+            }
+            #pullUp .pullUpIcon  {
+	            -webkit-transform:rotate(-180deg) translateZ(0);
+            }
+
+            #pullDown.flip .pullDownIcon {
+	            -webkit-transform:rotate(-180deg) translateZ(0);
+            }
+
+            #pullUp.flip .pullUpIcon {
+	            -webkit-transform:rotate(0deg) translateZ(0);
+            }
+
+            #pullDown.loading .pullDownIcon, #pullUp.loading .pullUpIcon {
+	            background-position:0 100%;
+	            -webkit-transform:rotate(0deg) translateZ(0);
+	            -webkit-transition-duration:0ms;
+
+	            -webkit-animation-name:loading;
+	            -webkit-animation-duration:2s;
+	            -webkit-animation-iteration-count:infinite;
+	            -webkit-animation-timing-function:linear;
+            }
+            .on {
+                color: red;
+            }
+            #navul {
+                list-style-type: none;
+            }
+            .navli {
+                width: 100px;
+                float: left;
+            }
+            @-webkit-keyframes loading {
+	            from { -webkit-transform:rotate(0deg) translateZ(0); }
+	            to { -webkit-transform:rotate(360deg) translateZ(0); }
+            }
+        </style>
+        <!--<script type="text/javascript" src="node_modules/iscroll/build/iscroll-probe.js"></script>-->
+        <script type="text/javascript" src="iscroll.js"></script>
+    </head>
+    <body>
+        <div id="navwrap" style="overflow:hidden;position:relative;width:100%;height:60px;">
+            <div id="navscrl" style="width:800px">
+                <ul id="navul" class="clearfix">
+                    <li class="navli on">1</li>
+                    <li class="navli">2</li>
+                    <li class="navli">3</li>
+                    <li class="navli">4</li>
+                    <li class="navli">5</li>
+                    <li class="navli">6</li>
+                    <li class="navli">7</li>
+                    <li class="navli">8</li>
+                </ul>
+            </div>
+        </div>
+        <!--<div id="view">
+            <div id="xwrap">
+                <div id="xscrl" class="clearfix">
+                    <div class="content">
+                        <div id="ywrap1">
+                            <div id="yscrl1">
+                                <div id="pullDown">
+			                        <span class="pullDownIcon"></span>
+                                    <span class="pullDownLabel">Pull down to refresh...</span>
+		                        </div>
+                                <ul id="yul1">
+                                    <li>1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                    <li>7</li>
+                                </ul>
+                                <div id="pullUp">
+                                    <span class="pullUpIcon"></span>
+                                    <span class="pullUpLabel">Pull up to load more...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div id="ywrap2">
+                            <div id="yscrl2">
+                                <ul>
+                                    <li>a</li>
+                                    <li>b</li>
+                                    <li>c</li>
+                                    <li>d</li>
+                                    <li>e</li>
+                                    <li>f</li>
+                                    <li>g</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <script type="text/javascript">
+            //document.getElementById("xscrl").style.width = (window.screen.width * 2) + "px";
+            var xScroll, yScroll1, yScroll2, navScroll;
+            var yscrl1 = document.getElementById("view");
+            var generatedCount = 0;
+            var yscrltouch1 = false, _maxScrollY;
+            (function () {
+                //function pullDownAction(id, obj) {
+                //    setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!
+                //        var el, li, i;
+                //        el = document.getElementById(id);
+                //        for (i = 0; i < 1; i++) {
+                //            li = document.createElement('li');
+                //            li.innerText = 'Generated row ' + (++generatedCount);
+                //            el.insertBefore(li, el.childNodes[0]);
+                //        }
+                //        obj.refresh();		// Remember to refresh when contents are loaded (ie: on ajax completion)
+                //    }, 1000);	// <-- Simulate network congestion, remove setTimeout from production!
+                //}
+                //function pullUpAction(id, obj) {
+                //    setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!
+                //        var el, li, i;
+                //        el = document.getElementById(id);
+                //        for (i = 0; i < 1; i++) {
+                //            li = document.createElement('li');
+                //            li.innerText = 'Generated row ' + (++generatedCount);
+                //            el.appendChild(li, el.childNodes[0]);
+                //        }
+                //        obj.refresh();		// Remember to refresh when contents are loaded (ie: on ajax completion)
+                //    }, 1000);	// <-- Simulate network congestion, remove setTimeout from production!
+                //}
+                //pullDownEl = document.getElementById('pullDown');
+                //pullDownOffset = pullDownEl.offsetHeight;
+                //pullUpEl = document.querySelector('#pullUp');
+                //pullUpOffset = pullUpEl.offsetHeight;
+                //xScroll = new IScroll('#xwrap', {
+                //    scrollX: true,
+                //    scrollY: false,
+                //    momentum: false,
+                //    snap: true,
+                //    snapSpeed: 400,
+                //    keyBindings: true
+                //});
+                //yScroll1 = new IScroll('#ywrap1', {
+                //    useTransition: true,
+                //    topOffset: pullDownOffset,
+                //    startY: -pullDownOffset,
+                //    preventDefault: false,
+                //    zoom: false,
+                //    mouseWheel: true,
+                //    probeType: 3,
+                //    bounce: true,
+                //    scrollbars: true,
+                //    interactiveScrollbars: true,
+                //    shrinkScrollbars: 'scale',
+                //    fadeScrollbars: true,
+                //});
+                //yscrl1.addEventListener("touchstart", function () {
+                //    yscrltouch1 = true;
+                //}, false);
+                //yscrl1.addEventListener("touchend", function () {
+                //    yscrltouch1 = false;
+                //}, false);
+                //_maxScrollY = yScroll1.maxScrollY = yScroll1.maxScrollY + pullUpOffset;
+                //yScroll1.on("scroll", function () {
+                //    if (yscrltouch1) {
+                //        if (this.y >= 5 && pullDownEl && !pullDownEl.className.match('flip')) {
+                //            pullDownEl.className = 'flip';
+                //            pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Release to refresh';
+                //            this.minScrollY = 0;
+                //        } else if (this.y < 5 && pullDownEl && pullDownEl.className.match('flip')) {
+                //            pullDownEl.className = '';
+                //            pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Pull down to refresh';
+                //            this.minScrollY = -pullDownOffset;
+                //        } else if (this.y <= (_maxScrollY - pullUpOffset) && pullUpEl && !pullUpEl.className.match('flip')) {
+                //            pullUpEl.className = 'flip';
+                //            pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Release to refresh';
+                //            this.maxScrollY = this.maxScrollY - pullUpOffset;
+                //        } else if (this.y > (_maxScrollY - pullUpOffset) && pullUpEl && pullUpEl.className.match('flip')) {
+                //            pullUpEl.className = '';
+                //            pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Pull up to load more';
+                //            this.maxScrollY = this.maxScrollY + pullUpOffset;
+                //        }
+                //    }
+                //});
+                //yScroll1.on("scrollEnd", function () {
+                //    if (pullDownEl && pullDownEl.className.match('flip')) {
+                //        pullDownEl.className = 'loading';
+                //        pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Loading...';
+                //        pullDownAction("yul1", yScroll1);
+                //    }
+                //    else if (pullUpEl && pullUpEl.className.match('flip')) {
+                //        console.log('pull up loading');
+                //        pullUpEl.className = 'loading';
+                //        pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Loading...';
+                //        pullUpAction("yul1", yScroll1);
+                //    }
+                //});
+                //yScroll1.on("refresh", function () {
+                //    _maxScrollY = this.maxScrollY = this.maxScrollY + pullUpOffset;
+                //    if (pullDownEl && pullDownEl.className.match('loading')) {
+                //        pullDownEl.className = '';
+                //        pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Pull down to refresh';
+                //        this.scrollTo(0, this.options.startY, 0);
+                //    } else if (pullUpEl && pullUpEl.className.match('loading')) {
+                //        pullUpEl.className = '';
+                //        pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Pull up to load more';
+                //        this.scrollTo(0, this.maxScrollY, 0);
+                //    }
+                //});
+                //yScroll2 = new IScroll('#ywrap2', {
+                //    preventDefault: false,
+                //    zoom: false,
+                //    mouseWheel: true,
+                //    probeType: 3,
+                //    bounce: true,
+                //    scrollbars: true,
+                //    interactiveScrollbars: true,
+                //    shrinkScrollbars: 'scale',
+                //    fadeScrollbars: true
+                //});
+                navScroll = new IScroll("#navwrap", { scrollX: true, scrollY: false });
+                document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+            })();
+        </script>
+    </body>
+</html>

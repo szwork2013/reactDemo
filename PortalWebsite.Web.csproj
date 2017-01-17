@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8F75924B-5FD8-4E66-894A-BD48F4A2526B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PortalWebsite.Web</RootNamespace>
+    <AssemblyName>PortalWebsite.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\components\AttachInfo.js" />
+    <Content Include="app\components\DetailPage.js" />
+    <Content Include="app\components\IndexContent.js" />
+    <Content Include="app\components\IndexInfoList.js" />
+    <Content Include="app\components\InfoDetail.js" />
+    <Content Include="app\components\IscrollContent.js" />
+    <Content Include="app\components\Indicator.js" />
+    <Content Include="app\components\InfoItem.js" />
+    <Content Include="app\components\InfoList.js" />
+    <Content Include="app\components\Page.js" />
+    <Content Include="app\components\PicCarousel.js" />
+    <Content Include="app\components\PicCarouselItem.js" />
+    <Content Include="app\components\PicItem.js" />
+    <Content Include="app\components\PicList.js" />
+    <Content Include="app\components\Refresh.js" />
+    <Content Include="app\components\SiteLayout.js" />
+    <Content Include="app\components\SiteMain.js" />
+    <Content Include="app\components\SiteNav.js" />
+    <Content Include="app\events\EventEmitter.js" />
+    <Content Include="app\routers\SiteRouter.js" />
+    <Content Include="app\stores\AppStore.js" />
+    <Content Include="app\stores\DetailStore.js" />
+    <Content Include="app\stores\InfoStore.js" />
+    <Content Include="app\stores\IScrollStore.js" />
+    <Content Include="app\stores\SubjectStore.js" />
+    <Content Include="gulpfile.js" />
+    <Content Include="horizontal.html" />
+    <Content Include="index.html" />
+    <Content Include="app\components\App.js" />
+    <Content Include="app\components\SiteHeader.js" />
+    <Content Include="iscroll-probe.js" />
+    <Content Include="iscroll.js" />
+    <Content Include="static\images\1.jpg" />
+    <Content Include="static\images\1_s.jpg" />
+    <Content Include="static\images\2.jpg" />
+    <Content Include="static\images\2_s.jpg" />
+    <Content Include="static\images\3.jpg" />
+    <Content Include="static\images\3_s.jpg" />
+    <Content Include="static\images\4.jpg" />
+    <Content Include="static\images\4_s.jpg" />
+    <Content Include="static\images\5.jpg" />
+    <Content Include="static\images\5_s.jpg" />
+    <Content Include="static\images\6.jpg" />
+    <Content Include="static\images\6_s.jpg" />
+    <Content Include="static\images\7.jpg" />
+    <Content Include="static\images\7_s.jpg" />
+    <Content Include="static\images\blank.gif" />
+    <Content Include="static\images\icons.png" />
+    <Content Include="static\images\pull-icon.png" />
+    <Content Include="static\images\repeat-x.png" />
+    <Content Include="static\images\repeat-y.png" />
+    <Content Include="test.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="package.json" />
+    <Content Include="static\less\default.less" />
+    <Content Include="static\less\variables.less" />
+    <Content Include="static\less\test.less" />
+    <Content Include="static\less\common.less" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>9947</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:28964/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

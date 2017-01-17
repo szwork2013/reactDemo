@@ -1,0 +1,36 @@
+{
+  "name": "PortalWebsite.Web",
+  "version": "1.0.0",
+  "description": "Reference application for facebook react ",
+  "main": "bundle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^9.0.3",
+    "classnames": "^2.2.5",
+    "gulp": "^3.8.11",
+    "gulp-clean": "^0.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-less": "^3.1.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.0",
+    "gulp-symlink": "^2.1.0",
+    "gulp-uglify": "^2.0.0",
+    "history": "^1.17.0",
+    "iscroll": "^5.2.0",
+    "jquery-browserify": "^1.8.1",
+    "jquery-ui-browserify": "^1.11.0-pre-seelio",
+    "react": "^0.13.2",
+    "react-async": "^2.0.1",
+    "react-router": "^1.0.0",
+    "react-tap-event-plugin": "^0.1.6",
+    "reactify": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "wolfy-eventemitter": "^0.1.0",
+    "zepto": "^1.2.0"
+  }
+}
