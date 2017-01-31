@@ -2,12 +2,16 @@
 var PicCarouselItem = require("./PicCarouselItem");
 var Indicator = require("./Indicator");
 var IScroll = require("iscroll/build/iscroll-probe");
+var IScrollStore = require("../stores/IScrollStore");
 
 var PicCarousel = React.createClass({
     getInitialState: function () {
         return {
             data: []
         }
+    },
+    shouldComponentUpdate: function (nextProps, nextState) {
+        return this.props.refresh !== nextProps.refresh;
     },
     iscrollCircle: function (t) {
         var curPage = this.iscroll.currentPage.pageX,
@@ -21,9 +25,9 @@ var PicCarousel = React.createClass({
             this.iscroll.goToPage(1, 0, 0);
             nextPage = 2;
         }
-        t.timer = setTimeout(function () {
-            this.iscroll.goToPage(nextPage, 0);
-        }.bind(this), 2000);
+        //t.timer = setTimeout(function () {
+        //    this.iscroll.goToPage(nextPage, 0);
+        //}.bind(this), 2000);
     },
     componentWillMount: function () {
         this.setState({
@@ -45,6 +49,7 @@ var PicCarousel = React.createClass({
         };
         var t = { timer: null };
         this.iscroll = new IScroll("#pic_carl", options);
+        IScrollStore.setPicCarl(this.iscroll);
         this.iscroll.goToPage(1,0,0);
         this.iscroll.on("scrollStart", function () {
             clearTimeout(t.timer);

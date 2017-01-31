@@ -1,6 +1,7 @@
 ﻿var IScrollStore = {
     _nav: null,
     _content: null,
+    _picCarl: null,
     _els: [],
     _length: 0,
     _curIdx: 0,
@@ -18,8 +19,23 @@
     disableEl: function () {
         if (this._els[this._curIdx]) this._els[this._curIdx].disable();
     },
+    enableNav: function () {
+        if (this._nav) this._nav.enable();
+    },
+    disableNav: function () {
+        if (this._nav) this._nav.disable();
+    },
+    enablePicCarl: function () {
+        if (this._picCarl) this._picCarl.enable();
+    },
+    disablePicCarl: function () {
+        if (this._picCarl) this._picCarl.disable();
+    },
     setNav: function (iscroll) {
         this._nav = iscroll;
+    },
+    setPicCarl: function (iscroll) {
+        this._picCarl = iscroll;
     },
     setContent: function (iscroll) {
         this._content = iscroll;

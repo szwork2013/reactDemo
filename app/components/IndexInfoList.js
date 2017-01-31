@@ -3,6 +3,9 @@ var InfoItem = require("./InfoItem");
 var EventEmitter = require("../events/EventEmitter");
 
 var IndexInfoList = React.createClass({
+    shouldComponentUpdate: function (nextProps, nextState) {
+        return this.props.refresh !== nextProps.refresh;
+    },
     ulClick: function (e) {
         e.preventDefault();
         var idx, tar = e.target;
