@@ -15,12 +15,9 @@ var PicList = React.createClass({
             topOffset: pullDownOffset,
             startY: -pullDownOffset,
             preventDefault: false,
-            zoom: false,
             probeType: 1,
             bounce: true,
-            scrollbars: true,
-            interactiveScrollbars: true,
-            shrinkScrollbars: 'scale',
+            scrollbars: false,
             fadeScrollbars: true
         }
         this.iscroll = new IScroll("#wrap-" + this.props.idx, options);

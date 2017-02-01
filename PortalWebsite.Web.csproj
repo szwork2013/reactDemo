@@ -81,6 +81,7 @@
     <Content Include="app\stores\DetailStore.js" />
     <Content Include="app\stores\InfoStore.js" />
     <Content Include="app\stores\IScrollStore.js" />
+    <Content Include="app\stores\RefreshStore.js" />
     <Content Include="app\stores\SubjectStore.js" />
     <Content Include="gulpfile.js" />
     <Content Include="horizontal.html" />

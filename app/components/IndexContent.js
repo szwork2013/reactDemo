@@ -7,7 +7,7 @@ var IScrollStore = require("../stores/IScrollStore");
 
 var IndexContent = React.createClass({
     getInitialState: function(){
-        return { downStatus: 0, reflesh: false }
+        return { downStatus: 0, refresh: 0 }
     },
     componentDidMount: function () {
         var header = document.getElementById("header");
@@ -40,11 +40,13 @@ var IndexContent = React.createClass({
         }.bind(this));
         this.iscroll.on("scrollEnd", function () {
             IScrollStore.scrollElEnd();
-            this.state.downStatus === 1 && this.setState({ downStatus: 2 });
-            setTimeout(function () {
-                this.iscroll.refresh();
-                this.setState({ downStatus: 0, refresh: true });
-            }.bind(this), 1000);
+            if (this.state.downStatus === 1) {
+                this.setState({ downStatus: 2 });
+                setTimeout(function () {
+                    this.iscroll.refresh();
+                    this.setState({ downStatus: 0, refresh: this.state.refresh + 1 });
+                }.bind(this), 1000);
+            }
         }.bind(this));
         IScrollStore.changeEl(this.props.idx, this.iscroll);
     },

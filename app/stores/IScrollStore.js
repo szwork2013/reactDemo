@@ -88,6 +88,9 @@
         this._curIdx = idx;
         if (!this._els[this._curIdx]) this._els[this._curIdx] = iscroll;
         this.enableEl();
+    },
+    getCurScrollEl: function () {
+        return this._els[this._curIdx];
     }
 };
 

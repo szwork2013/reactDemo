@@ -17,7 +17,6 @@ var PicCarousel = React.createClass({
         var curPage = this.iscroll.currentPage.pageX,
             nextPage = curPage + 1,
             pageSize = this.iscroll.pages.length;
-        clearTimeout(t.timer);
         if (curPage === 0) {
             this.iscroll.goToPage(pageSize - 2, 0, 0);
             nextPage = pageSize - 1;
@@ -25,9 +24,6 @@ var PicCarousel = React.createClass({
             this.iscroll.goToPage(1, 0, 0);
             nextPage = 2;
         }
-        //t.timer = setTimeout(function () {
-        //    this.iscroll.goToPage(nextPage, 0);
-        //}.bind(this), 2000);
     },
     componentWillMount: function () {
         this.setState({
@@ -36,6 +32,9 @@ var PicCarousel = React.createClass({
                 { src: "/static/images/2.jpg" }
             ]
         });
+    },
+    componentDidUpdate: function () {
+        this.iscroll.goToPage(1,0,0);
     },
     componentDidMount: function () {
         var options = {
@@ -51,19 +50,16 @@ var PicCarousel = React.createClass({
         this.iscroll = new IScroll("#pic_carl", options);
         IScrollStore.setPicCarl(this.iscroll);
         this.iscroll.goToPage(1,0,0);
-        this.iscroll.on("scrollStart", function () {
-            clearTimeout(t.timer);
-            t.timer = setTimeout(function () {
-                this.iscrollCircle(t);
-            }.bind(this), 2000);
+        this.iscroll.on("scroll", function () {
         }.bind(this));
         this.iscroll.on("scrollEnd", function () {
             this.iscrollCircle(t);
         }.bind(this));
-        this.iscrollCircle(t);
     },
     render: function () {
-        var _data = this.state.data;
+        var _data = this.state.data.map(function (item, idx) {
+            return item;
+        });
         _data.unshift(_data[_data.length - 1]);
         _data.push(_data[1]);
         var p = 100 / _data.length;
