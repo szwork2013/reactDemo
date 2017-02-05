@@ -1,7 +1,7 @@
 ﻿var React = require("react");
 var PicItem = require("./PicItem");
 var Refresh = require("./Refresh");
-var IScroll = require("iscroll/build/iscroll-probe");
+var IScroll = require("../../static/js/iscroll-probe");
 var IScrollStore = require("../stores/IScrollStore");
 
 var PicList = React.createClass({

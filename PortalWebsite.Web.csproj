@@ -88,7 +88,6 @@
     <Content Include="index.html" />
     <Content Include="app\components\App.js" />
     <Content Include="app\components\SiteHeader.js" />
-    <Content Include="iscroll-probe.js" />
     <Content Include="iscroll.js" />
     <Content Include="static\images\1.jpg" />
     <Content Include="static\images\1_s.jpg" />
@@ -109,6 +108,7 @@
     <Content Include="static\images\pull-icon.png" />
     <Content Include="static\images\repeat-x.png" />
     <Content Include="static\images\repeat-y.png" />
+    <Content Include="static\js\iscroll-probe.js" />
     <Content Include="test.html" />
     <Content Include="Web.config" />
   </ItemGroup>

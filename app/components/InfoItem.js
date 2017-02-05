@@ -2,6 +2,9 @@
 var AttachInfo = require("./AttachInfo");
 
 var InfoItem = React.createClass({
+    shouldComponentUpdate: function (nextProps, nextState) {
+        return this.props.refresh !== nextProps.refresh;
+    },
     render: function () {
         return (
             <li className="inf-it retinabb" data-id={this.props.id}>

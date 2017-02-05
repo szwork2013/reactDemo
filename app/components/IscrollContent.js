@@ -1,5 +1,5 @@
 ﻿var React = require("react");
-var IScroll = require("iscroll/build/iscroll-probe");
+var IScroll = require("../../static/js/iscroll-probe");
 var Page = require("./Page");
 var EventEmitter = require("../events/EventEmitter");
 var SubjectStore = require("../stores/SubjectStore");

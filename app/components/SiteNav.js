@@ -1,6 +1,6 @@
 ﻿var React = require("react");
 var ReactRouter = require("react-router");
-var IScroll = require("iscroll/build/iscroll-probe");
+var IScroll = require("../../static/js/iscroll-probe");
 var EventEmitter = require("../events/EventEmitter");
 var SubjectStore = require("../stores/SubjectStore");
 var IScrollStore = require("../stores/IScrollStore");

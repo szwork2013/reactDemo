@@ -2,7 +2,7 @@
 var PicCarousel = require("./PicCarousel");
 var IndexInfoList = require("./IndexInfoList");
 var Refresh = require("./Refresh");
-var IScroll = require("iscroll/build/iscroll-probe");
+var IScroll = require("../../static/js/iscroll-probe");
 var IScrollStore = require("../stores/IScrollStore");
 
 var IndexContent = React.createClass({
@@ -18,7 +18,7 @@ var IndexContent = React.createClass({
         var options = {
             topOffset: pullDownOffset,
             startY: -pullDownOffset,
-            preventDefault: false,
+            preventDefault: true,
             probeType: 1,
             bounce: true,
             scrollbars: false,

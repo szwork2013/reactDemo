@@ -1,7 +1,7 @@
 ﻿var React = require("react");
 var PicCarouselItem = require("./PicCarouselItem");
 var Indicator = require("./Indicator");
-var IScroll = require("iscroll/build/iscroll-probe");
+var IScroll = require("../../static/js/iscroll-probe");
 var IScrollStore = require("../stores/IScrollStore");
 
 var PicCarousel = React.createClass({
