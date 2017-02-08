@@ -10,16 +10,12 @@ var IndexContent = React.createClass({
         return { downStatus: 0, refresh: 0 }
     },
     componentDidMount: function () {
-        var header = document.getElementById("header");
-        var h = window.screen.height - header.clientHeight;
-        var wrap = document.getElementById("wrap-" + this.props.idx);
-        wrap.style.height = h + "px";
         var pullDownOffset = document.getElementById("pullDown-" + this.props.idx).clientHeight;
         var options = {
             topOffset: pullDownOffset,
             startY: -pullDownOffset,
             preventDefault: true,
-            probeType: 1,
+            probeType: 2,
             bounce: true,
             scrollbars: false,
             fadeScrollbars: true

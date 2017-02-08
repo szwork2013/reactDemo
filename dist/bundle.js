@@ -73,16 +73,12 @@ var IndexContent = React.createClass({displayName: "IndexContent",
         return { downStatus: 0, refresh: 0 }
     },
     componentDidMount: function () {
-        var header = document.getElementById("header");
-        var h = window.screen.height - header.clientHeight;
-        var wrap = document.getElementById("wrap-" + this.props.idx);
-        wrap.style.height = h + "px";
         var pullDownOffset = document.getElementById("pullDown-" + this.props.idx).clientHeight;
         var options = {
             topOffset: pullDownOffset,
             startY: -pullDownOffset,
             preventDefault: true,
-            probeType: 1,
+            probeType: 2,
             bounce: true,
             scrollbars: false,
             fadeScrollbars: true
@@ -290,16 +286,12 @@ var InfoList = React.createClass({displayName: "InfoList",
         return true;
     },
     componentDidMount: function () {
-        var header = document.getElementById("header");
-        var h = window.screen.height - header.clientHeight;
-        var wrap = document.getElementById("wrap-" + this.props.idx);
-        wrap.style.height = h + "px";
         var pullDownOffset = document.getElementById("pullDown-" + this.props.idx).clientHeight;
         var options = {
             topOffset: pullDownOffset,
             startY: -pullDownOffset,
             preventDefault: false,
-            probeType: 1,
+            probeType: 2,
             bounce: true,
             click: true,
             scrollbars: false,
@@ -374,8 +366,8 @@ var InfoList = React.createClass({displayName: "InfoList",
             return (React.createElement(InfoItem, {url: item.url, title: item.title, time: item.time, key: idx, id: item.id, refresh: this.state.refresh}));
         }.bind(this));
         return (
-            React.createElement("div", {id: this.props.idx === 0 ? null : "wrap-" + this.props.idx, className: "inf-warp"}, 
-                React.createElement("div", {id: this.props.idx === 0 ? null : "scrl-" + this.props.idx, className: "inf-scrl"}, 
+            React.createElement("div", {id: this.props.idx === 0 ? null : "wrap-" + this.props.idx, className: "wrap"}, 
+                React.createElement("div", {id: this.props.idx === 0 ? null : "scrl-" + this.props.idx, className: "scrl"}, 
                     React.createElement(Refresh, {idx: this.props.idx, downStatus: this.state.downStatus}), 
                     React.createElement("ul", {onClick: this.ulClick}, 
                         infoitems
@@ -457,11 +449,9 @@ var IscrollContent = React.createClass({displayName: "IscrollContent",
             return (React.createElement(Page, {key: idx, idx: idx, type: item.type, w: p, load: item.load}));
         });
         return (
-            React.createElement("div", {id: "main-view", className: "main-view"}, 
-                React.createElement("div", {id: "main-wrap", className: "main-wrap"}, 
-                    React.createElement("div", {id: "main-scrl", ref: "mainscrl", className: "main-scrl clearfix", style: {width: 100 * len + "%"}, onTouchStart: this.touchStartHandler, onTouchEnd: this.touchEndHandler}, 
-                        pages
-                    )
+            React.createElement("div", {id: "main-wrap", className: "main-wrap"}, 
+                React.createElement("div", {id: "main-scrl", ref: "mainscrl", className: "main-scrl clearfix", style: {width: 100 * len + "%"}, onTouchStart: this.touchStartHandler, onTouchEnd: this.touchEndHandler}, 
+                    pages
                 )
             )
         );

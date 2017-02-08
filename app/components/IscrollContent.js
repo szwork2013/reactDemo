@@ -66,11 +66,9 @@ var IscrollContent = React.createClass({
             return (<Page key={idx} idx={idx} type={item.type} w={p} load={item.load} />);
         });
         return (
-            <div id="main-view" className="main-view">
-                <div id="main-wrap" className="main-wrap">
-                    <div id="main-scrl" ref="mainscrl" className="main-scrl clearfix" style={{width: 100 * len + "%"}} onTouchStart={this.touchStartHandler} onTouchEnd={this.touchEndHandler}>
-                        {pages}
-                    </div>
+            <div id="main-wrap" className="main-wrap">
+                <div id="main-scrl" ref="mainscrl" className="main-scrl clearfix" style={{width: 100 * len + "%"}} onTouchStart={this.touchStartHandler} onTouchEnd={this.touchEndHandler}>
+                    {pages}
                 </div>
             </div>
         );

@@ -19,16 +19,12 @@ var InfoList = React.createClass({
         return true;
     },
     componentDidMount: function () {
-        var header = document.getElementById("header");
-        var h = window.screen.height - header.clientHeight;
-        var wrap = document.getElementById("wrap-" + this.props.idx);
-        wrap.style.height = h + "px";
         var pullDownOffset = document.getElementById("pullDown-" + this.props.idx).clientHeight;
         var options = {
             topOffset: pullDownOffset,
             startY: -pullDownOffset,
             preventDefault: false,
-            probeType: 1,
+            probeType: 2,
             bounce: true,
             click: true,
             scrollbars: false,
@@ -103,8 +99,8 @@ var InfoList = React.createClass({
             return (<InfoItem url={item.url} title={item.title} time={item.time} key={idx} id={item.id} refresh={this.state.refresh} />);
         }.bind(this));
         return (
-            <div id={this.props.idx === 0 ? null : "wrap-" + this.props.idx} className="inf-warp">
-                <div id={this.props.idx === 0 ? null : "scrl-" + this.props.idx} className="inf-scrl">
+            <div id={this.props.idx === 0 ? null : "wrap-" + this.props.idx} className="wrap">
+                <div id={this.props.idx === 0 ? null : "scrl-" + this.props.idx} className="scrl">
                     <Refresh idx={this.props.idx} downStatus={this.state.downStatus} />
                     <ul onClick={this.ulClick}>
                         {infoitems}

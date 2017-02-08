@@ -67,7 +67,10 @@ body {
     }
 }
 .content {
-    margin-top: 8.8rem;
+    position: absolute;
+    bottom: 0;
+    top: 8.8rem;
+    width: 100%;
 }
 .carl {
     overflow: hidden;
@@ -110,31 +113,6 @@ body {
 .mgt_8d8r {
     margin-top: 8.8rem;
 }
-.inf-warp {
-    position: relative;
-    overflow: hidden;
-    .inf-scrl {
-        .inf-it {
-            height: 5rem;
-            padding: .5rem;
-            display: flex;
-            /*background: url(/static/images/repeat-x.png) repeat-x 0 bottom/auto 1px;*/
-            .inf-img {
-                height: 100%;
-                flex: 0 0 auto;
-            }
-            .info-cont {
-                height: 100%;
-                flex: 1 1 auto;
-                margin-left: .5rem;
-                .inf-title {
-                    height: 75%;
-                    margin-top: -.3rem;
-                }
-            }
-        }
-    }
-}
 .pic-warp {
     position: relative;
     overflow: hidden;
@@ -173,21 +151,47 @@ body {
     clear: both;
 }
 .page {
+    height: 100%;
     float: left;
-    width: 50%;
 }
 .wrap {
-    width: 100%;
-    position: relative;
     overflow: hidden;
+    position:relative;
+    width: 100%;
+    height: 100%;
+    .scrl {
+        .inf-it {
+            height: 5rem;
+            padding: .5rem;
+            display: flex;
+            .inf-img {
+                height: 100%;
+                flex: 0 0 auto;
+            }
+            .info-cont {
+                height: 100%;
+                flex: 1 1 auto;
+                margin-left: .5rem;
+                .inf-title {
+                    height: 75%;
+                    margin-top: -.3rem;
+                }
+            }
+        }
+    }
 }
 .main-view {
     overflow: hidden;
     position:relative;
     width: 100%;
+    height: 100%;
 }
 .main-wrap {
     width: 100%;
+    height: 100%;
+}
+.main-scrl {
+    height: 100%;
 }
 .on {
     color: #b22619;
