@@ -1,6 +1,9 @@
 ﻿var React = require("react");
 
 var PicCarouselItem = React.createClass({
+    shouldComponentUpdate: function (nextProps, nextState) {
+        return this.props.refresh !== nextProps.refresh;
+    },
     render: function () {
         return (
             <div className="slide" style={{width:this.props.w + "%"}}>

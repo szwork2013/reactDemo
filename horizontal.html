@@ -4,50 +4,24 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width" />
         <title></title>
-        <style type="text/css">
-            body, div, ul, li {
-                margin: 0;
-                padding: 0;
-            }
-            .clearfix:after {
-                display: block;
-                content: "";
-                clear: both;
-            }
-            .on {
-                color: red;
-            }
-            #navul {
-                list-style-type: none;
-            }
-            .navli {
-                width: 100px;
-                float: left;
-            }
-            @-webkit-keyframes loading {
-	            from { -webkit-transform:rotate(0deg) translateZ(0); }
-	            to { -webkit-transform:rotate(360deg) translateZ(0); }
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="static/less/test.css" />
     </head>
     <body>
-        <div id="navwrap" style="overflow:hidden;position:relative;width:100%;height:60px;">
-            <div id="navscrl" style="width:800px">
-                <ul id="navul" class="clearfix">
-                    <li class="navli on">1</li>
-                    <li class="navli">2</li>
-                    <li class="navli">3</li>
-                    <li class="navli">4</li>
-                    <li class="navli">5</li>
-                    <li class="navli">6</li>
-                    <li class="navli">7</li>
-                    <li class="navli">8</li>
-                </ul>
-            </div>
+        <div class="test-sprites">
+            <ul class="f-cb">
+                <li class="icon1"></li>
+                <li class="icon2"></li>
+                <li class="icon3"></li>
+                <li class="icon4"></li>
+                <li class="icon5"></li>
+                <li class="icon6"></li>
+            </ul>
         </div>
-        <script type="text/javascript" src="iscroll.js"></script>
-        <script type="text/javascript">
-            var navScroll = new IScroll("#navwrap", { scrollX: true, scrollY: false, mouseWheel: true });
-        </script>
+        <div class="clearfix">
+            <i class="i-sina"></i>
+            <div style="width:2rem;height:2rem;float:left;"></div>
+            <div style="width:2rem;height:2rem;float:left;"></div>
+            <div style="width:2rem;height:2rem;float:left;"></div>
+        </div>
     </body>
 </html>

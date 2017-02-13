@@ -6,10 +6,6 @@ var IScrollStore = require("../stores/IScrollStore");
 
 var PicList = React.createClass({
     componentDidMount: function () {
-        var header = document.getElementById("header");
-        var h = window.screen.height - header.clientHeight;
-        var wrap = document.getElementById("wrap-" + this.props.idx);
-        wrap.style.height = h + "px";
         var pullDownOffset = document.getElementById("pullDown-" + this.props.idx).clientHeight;
         var options = {
             topOffset: pullDownOffset,
@@ -37,8 +33,8 @@ var PicList = React.createClass({
             return (<PicItem key={idx} url={item.url} title={item.title} time={item.time} count={item.count} />);
         });
         return (
-            <div id={"wrap-" + this.props.idx} className="pic-warp">
-                <div id={"scrl-" + this.props.idx} className="pic-scrl">
+            <div id={"wrap-" + this.props.idx} className="wrap">
+                <div id={"scrl-" + this.props.idx} className="scrl">
                     <Refresh idx={this.props.idx} />
                     <ul id="pic_ul">
                         {picitems}

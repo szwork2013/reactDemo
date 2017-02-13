@@ -78,6 +78,7 @@
     <Content Include="app\events\EventEmitter.js" />
     <Content Include="app\routers\SiteRouter.js" />
     <Content Include="app\stores\AppStore.js" />
+    <Content Include="app\stores\ConfigStore.js" />
     <Content Include="app\stores\DetailStore.js" />
     <Content Include="app\stores\InfoStore.js" />
     <Content Include="app\stores\IScrollStore.js" />
@@ -88,7 +89,7 @@
     <Content Include="index.html" />
     <Content Include="app\components\App.js" />
     <Content Include="app\components\SiteHeader.js" />
-    <Content Include="iscroll.js" />
+    <Content Include="static\font\fontello.svg" />
     <Content Include="static\images\1.jpg" />
     <Content Include="static\images\1_s.jpg" />
     <Content Include="static\images\2.jpg" />
@@ -121,6 +122,10 @@
     <Content Include="static\less\variables.less" />
     <Content Include="static\less\test.less" />
     <Content Include="static\less\common.less" />
+    <Content Include="static\font\fontello.eot" />
+    <Content Include="static\font\fontello.ttf" />
+    <Content Include="static\font\fontello.woff" />
+    <Content Include="static\font\fontello.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

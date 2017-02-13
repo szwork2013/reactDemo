@@ -1,3 +1,108 @@
-﻿.aaa {
-    color: red;
+﻿//@spriteWidth 雪碧图的宽度px
+//@spriteHeight 雪碧图的高度px
+//@iconWidth 需要显示icon的宽度px
+//@iconHeight 需要显示icon的高度px
+//@iconX icon的原始x坐标
+//@iconY icon的原始y坐标
+//
+.bgPosition(@spriteWidth, @spriteHeight, @iconWidth, @iconHeight, @iconX, @iconY){
+    background-position: (@iconX / (@spriteWidth - @iconWidth)) * 100% (@iconY / (@spriteHeight - @iconHeight)) * 100%; 
+}
+
+//使用的方式
+.test-sprites{
+    margin-top: 30px;
+
+    ul{
+        padding: 0;
+        margin: 0;
+    }
+
+    li{
+        width: 0.48rem;
+        height: 0.7rem;
+        overflow: hidden; 
+        box-sizing: border-box; 
+        margin-left: 0.3rem;
+        float: left;
+        background:transparent url('http://nos.netease.com/edu-image/9BC0742AEB1A0B756EFC71B9DF77E452.png') 0 -0.02rem no-repeat;
+        background-size: 10.72rem 4.42rem;
+    }
+
+    .icon2{
+        width: 0.74rem; 
+        height: 0.64rem;
+        .bgPosition(1072, 442, 74, 64, 188, 5); 
+    }
+
+    .icon3{
+        width: 0.71rem;
+        height: 0.74rem;
+        .bgPosition(1072, 442, 71, 74, 391, 2);
+    }
+
+    .icon4{
+        width: 0.72rem;
+        height: 0.73rem;
+        .bgPosition(1072, 442, 72, 73, 591, 3); 
+    }
+    .icon5{
+        width: 0.73rem;
+        height: 0.73rem;
+        .bgPosition(1072, 442, 73, 73, 792, 1); 
+    }
+    .icon6{
+        width: 0.67rem;
+        height: 0.57rem;
+        .bgPosition(1072, 442, 67, 57, 996, 8);
+    }
+}
+
+//同一张sprite图并且每个icon的大小相同
+.bgPositionSameSpriteAndWidth(@iconX, @iconY){
+
+    @spriteWidth : 220;
+    @spriteHeight : 220;
+    @iconWidth : 61;
+    @iconHeight : 61;
+
+    .bgPosition(@spriteWidth, @spriteHeight, @iconWidth, @iconHeight, @iconX, @iconY);
+}
+//使用
+i{
+    padding-top: 100%;
+    width: 100%;
+    display: block;
+    background: url(http://nos.netease.com/edu-image/3A65D313376F13CE75CE01C2593BD1CE.png) 0 0 no-repeat;
+    background-size: 2.2rem 2.2rem;
+}
+
+.i-sina{
+    .bgPositionSameSpriteAndWidth(10, 10);
+}
+
+.i-qzone{
+    .bgPositionSameSpriteAndWidth(80, 10);
+}
+
+.i-qq{
+    .bgPositionSameSpriteAndWidth(150, 10);
+}
+
+.i-douban{
+    .bgPositionSameSpriteAndWidth(10, 80);
+}
+
+.i-yixin{
+    .bgPositionSameSpriteAndWidth(80, 80);
+}
+
+.i-renren{
+    .bgPositionSameSpriteAndWidth(150, 80);
+}
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: block;
+    visibility: hidden; 
 }
