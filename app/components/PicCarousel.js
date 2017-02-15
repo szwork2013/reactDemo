@@ -51,6 +51,7 @@ var PicCarousel = React.createClass({
         }.bind(this));
         this.iscroll.on("scrollEnd", function () {
             this.iscrollCircle(t);
+            EventEmitter.dispatch("picScroll", this.iscroll.currentPage.pageX);
         }.bind(this));
         this.setState({
             data: [
@@ -65,6 +66,7 @@ var PicCarousel = React.createClass({
     componentDidUpdate: function () {
         if (this.dataChanged) {
             this.iscroll.refresh();
+            this.iscroll.goToPage(1,0,0);
         }
     },
     render: function () {

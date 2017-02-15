@@ -66,6 +66,7 @@
     <Content Include="app\components\Indicator.js" />
     <Content Include="app\components\InfoItem.js" />
     <Content Include="app\components\InfoList.js" />
+    <Content Include="app\components\Loading.js" />
     <Content Include="app\components\Page.js" />
     <Content Include="app\components\PicCarousel.js" />
     <Content Include="app\components\PicCarouselItem.js" />
